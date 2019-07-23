@@ -92,9 +92,13 @@ def play_again():
 	ans = 0
 
 	while ans != 'yes' and ans != 'no':
-		ans = input("Do you want to play again? \n").lower()
+		try:
+			ans = input("Do you want to play again? \n").lower()
+		except Exception as e:
+			print("Please answer 'yes' or 'no'")
 
 	if ans == 'yes':
 		play_game()
 
-play_game()
+if __name__ == __main__:
+	play_game()
